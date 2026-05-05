@@ -1,0 +1,25 @@
+# Compilados y empaquetados
+target/
+*.class
+*.jar
+
+# Base de datos ObjectDB (no subir al repositorio)
+data/
+*.odb
+*.odb$
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+*.classpath
+*.project
+.settings/
+
+# macOS
+.DS_Store
+
+# Maven wrapper (opcional, descomenta si no usas wrapper)
+# .mvn/
+# mvnw
+# mvnw.cmd

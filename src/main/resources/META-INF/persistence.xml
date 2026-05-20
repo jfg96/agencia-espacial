@@ -8,13 +8,21 @@
     <persistence-unit name="agencia-espacial">
         <provider>com.objectdb.jpa.Provider</provider>
 
-        <!--
-            Ruta del fichero de base de datos local.
-            El fichero se creará automáticamente en la carpeta data/
-            relativa al directorio desde el que se ejecuta la aplicación.
-            Añade data/ y *.odb a tu .gitignore.
-        -->
+        <!-- Registrar explícitamente todas las entidades (obligatorio en ObjectDB) -->
+        <class>com.agenciaespacial.model.VehiculoLanzamiento</class>
+        <class>com.agenciaespacial.model.Mision</class>
+        <class>com.agenciaespacial.model.Astronauta</class>
+        <class>com.agenciaespacial.model.Participacion</class>
+        <class>com.agenciaespacial.model.Satelite</class>
+        <class>com.agenciaespacial.model.RegistroTelemetria</class>
+        <class>com.agenciaespacial.model.EstacionSeguimiento</class>
+
         <properties>
+            <!--
+                Ruta del fichero de base de datos local.
+                Se crea automáticamente en la carpeta data/ al ejecutar.
+                Añade data/ y *.odb a tu .gitignore.
+            -->
             <property name="javax.persistence.jdbc.url"
                       value="data/agencia-espacial.odb"/>
         </properties>

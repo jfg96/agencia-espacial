@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
+ * @author Antonio Manuel Rodriguez Palenzuela
  * Crear/buscar/actualizar/eliminar RegistroTelemetria.
  * RS-003: nivelBateria 0-100 (validado en TelemetriaService).
  * La tabla carga los registros del satélite seleccionado en el ComboBox de filtro.

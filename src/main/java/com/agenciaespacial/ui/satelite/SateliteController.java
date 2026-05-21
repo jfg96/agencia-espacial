@@ -1,9 +1,4 @@
-/**
- * @author Antonio Manuel Rodriguez Palenzuela
- * Descriptio
- */
 package com.agenciaespacial.ui.satelite;
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -11,8 +6,16 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.StringConverter;
 import java.util.List;
-
-/** CRUD de Satélites. Campo correcto: fechaOrbita. Valida RS-002 (altitudOrbital > 0). */
+/**
+ * @author Antonio Manuel Rodriguez Palenzuela
+ *
+ * Controlador JavaFX para la gestión de satélites en la interfaz gráfica.
+ * Proporciona funcionalidades de CRUD (Crear, Leer, Actualizar, Eliminar)
+ * sobre la entidad {@link Satelite}, así como la visualización de sus
+ * registros de telemetría asociados. Este controlador interactúa con
+ * los servicios {@link SateliteService} y {@link MisionService}
+ CRUD de Satélites. Campo correcto: fechaOrbita. Valida RS-002 (altitudOrbital > 0).
+ */
 public class SateliteController {
 
     @FXML private TableView<Satelite>           tablaSatelites;

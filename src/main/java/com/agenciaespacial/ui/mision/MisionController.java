@@ -8,6 +8,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.StringConverter;
 import java.time.LocalDate;
 import java.util.List;
+/**
+ * @author: Antonio Manuel Rodriguez Palenzuela
+ * Controlador para gestionar las misiones espaciales: crear, buscar, actualizar y eliminar.
+ * Permite asignar vehículos de lanzamiento, definir fechas y estados, y visualizar
+ * los satélites y astronautas asociados a cada misión. Aplica validaciones de negocio
+ * @link MisionService
+ *
+ */
 
 /** CRUD de Misiones. tripulada=Boolean, vehiculo, fechaFinPrevista. */
 public class MisionController {

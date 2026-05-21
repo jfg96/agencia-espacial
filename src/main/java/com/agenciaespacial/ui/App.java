@@ -6,6 +6,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Aplicación JavaFX principal que inicia la interfaz de usuario.
+ *
+ * Responsabilidades:
+ * - Cargar la vista principal ({@code MainView.fxml}) y mostrarla como {@code Stage}.
+ * - Gestionar el ciclo de vida de la aplicación JavaFX.
+ * - Liberar recursos de persistencia al cerrar la aplicación mediante {@link com.agenciaespacial.util.JPAUtil#close()}.
+ *
+ * Uso:
+ * - Ejecutar la clase para arrancar la GUI. El método {@code main} delega en {@code Application.launch(...)}.
+ *
+ * Autor: Antonio Manuel Rodriguez Palenzuela
+ * Versión: 1.0
+ */
 public class App extends Application {
 
     @Override

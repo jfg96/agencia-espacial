@@ -5,7 +5,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-/** CRUD de Vehículos de Lanzamiento. Campo correcto: capacidadKg. */
+/**
+ * Controlador UI para CRUD de Vehículos de Lanzamiento.
+ *
+ * Responsabilidades:
+ * - Listar, buscar por ID, crear, actualizar y eliminar {@code VehiculoLanzamiento}.
+ * - Validar la capacidad en kg (campo {@code capacidadKg}) como número.
+ * - Rellenar formulario y sincronizar selección en la tabla.
+ *
+ * Autor: Antonio Manuel Rodriguez Palenzuela
+ */
 public class VehiculoController {
 
     @FXML private TableView<VehiculoLanzamiento>             tablaVehiculos;

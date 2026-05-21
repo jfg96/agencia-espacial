@@ -4,16 +4,20 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 /**
  * Controlador para la gestión de Astronautas: crear, buscar por ID, actualizar y eliminar.
- * RS-004: Validación de datos (nombre completo no vacío, fecha de nacimiento no
- * futura, nacionalidad no vacía, especialidad no vacía) se realiza en la capa de servicio
- * {@link AstronautaService}.
- * <p>
- * El controlador se comunica con la capa de servicio para realizar las operaciones
- * de negocio y actualiza la interfaz de usuario en consecuencia. Cualquier error de
- * validación o excepción se muestra al usuario mediante un {@code Alert}.
- * </p>
+ *
+ * Responsabilidades:
+ * - Actualizar la tabla de astronautas y el formulario según la interacción del usuario.
+ * - Delegar las operaciones de persistencia y validación a {@link AstronautaService}.
+ * - Mostrar mensajes amigables al usuario mediante {@code lblMensaje} y {@code Alert}.
+ *
+ * Validaciones (resumen):
+ * - Validaciones más estrictas (nombre obligatorio, fecha de nacimiento coherente) se realizan
+ *   en la capa de servicio. El controlador sólo parsea y prepara la entidad.
+ *
+ * @author: Antonio Manuel Rodriguez Palenzuela
  */
 
 /** CRUD de Astronautas. RS-004 validado en AstronautaService. */

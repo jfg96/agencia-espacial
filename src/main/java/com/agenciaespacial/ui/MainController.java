@@ -5,6 +5,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Controlador de la ventana principal (MainView).
+ *
+ * Responsabilidades:
+ * - Abrir ventanas secundarias (misiones, astronautas, satélites, telemetría, vehículos, estaciones).
+ * - Encapsular la carga de recursos FXML y la creación de {@code Stage} en el método {@link #abrir}.
+ *
+ * Consideraciones:
+ * - Las excepciones al cargar FXML se registran en la consola; para producción se recomienda
+ *   mostrar mensajes de error al usuario o un logger centralizado.
+ *
+ * Autor: Antonio Manuel Rodriguez Palenzuela
+ */
 public class MainController {
 
     private void abrir(String fxml, String titulo, int w, int h) {

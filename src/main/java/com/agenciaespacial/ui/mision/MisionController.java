@@ -8,16 +8,22 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.StringConverter;
 import java.time.LocalDate;
 import java.util.List;
-/**
- * @author: Antonio Manuel Rodriguez Palenzuela
- * Controlador para gestionar las misiones espaciales: crear, buscar, actualizar y eliminar.
- * Permite asignar vehículos de lanzamiento, definir fechas y estados, y visualizar
- * los satélites y astronautas asociados a cada misión. Aplica validaciones de negocio
- * @link MisionService
- *
- */
 
-/** CRUD de Misiones. tripulada=Boolean, vehiculo, fechaFinPrevista. */
+/**
+ * Controlador para el CRUD de Misiones.
+ *
+ * Responsabilidades:
+ * - Listar, buscar, crear, actualizar y eliminar {@code Mision}.
+ * - Gestionar la asignación de {@code VehiculoLanzamiento} y el estado de la misión.
+ * - Mostrar información relacionada (satélites, astronautas) mediante diálogos.
+ * - Delegar validaciones y persistencia en {@link MisionService} y {@link VehiculoService}.
+ *
+ * Notas:
+ * - Las validaciones complejas (p. ej. coherencia de fechas) deben implementarse en el servicio.
+ * - El controlador solo se encarga de mapear formulario <-> entidad y de la interacción UI.
+ *
+ * Autor: Antonio Manuel Rodriguez Palenzuela
+ */
 public class MisionController {
 
     @FXML private TableView<Mision>              tablaMisiones;

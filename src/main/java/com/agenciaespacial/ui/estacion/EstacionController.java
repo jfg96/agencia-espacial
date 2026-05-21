@@ -6,20 +6,23 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.util.List;
 import java.util.stream.Collectors;
-/**
- *
- * @author Antonio Manuel Rodriguez Palenzuela
- * RS-002: CRUD de Estaciones de Seguimiento + ver misiones monitorizadas.
- * - El formulario se rellena al seleccionar una fila, o se limpia al pulsar "Nuevo" o "Limpiar".
- * - El botón "Ver misiones" muestra las misiones monitorizadas por la estación (misión de cada satélite).
- * - La validación de latitud/longitud se aplica al guardar: deben ser números decimales (lat: -90 a 90, lon: -180 a 180).
- * - La tabla se actualiza tras cada operación y al buscar por ID. El filtro de búsqueda por ID muestra solo la estación encontrada o un mensaje si no existe.
- * - Los mensajes de error/éxito se muestran en un Label debajo del formulario,
- *  con texto rojo para errores y verde para éxitos. También se usan Alert para mensajes informativos o confirmaciones.
- *
- */
 
-/** CRUD de Estaciones de Seguimiento + ver misiones monitorizadas. */
+/**
+ * Controlador para CRUD de Estaciones de Seguimiento y visualización de
+ * misiones monitorizadas por sus satélites.
+ *
+ * Responsabilidades:
+ * - Listar, buscar, crear, actualizar y eliminar {@code EstacionSeguimiento}.
+ * - Validar y parsear coordenadas (latitud/longitud) antes de persistir.
+ * - Mostrar las misiones monitorizadas por la estación (agregando misiones de sus satélites).
+ * - Actualizar la tabla y el formulario según interacción del usuario.
+ *
+ * Validaciones destacadas:
+ * - Las coordenadas se parsean y generan {@code IllegalArgumentException} si no son numéricas.
+ * - Mensajes de estado se muestran en un {@code Label} y mediante {@code Alert}.
+ *
+ * Autor: Antonio Manuel Rodriguez Palenzuela
+ */
 public class EstacionController {
 
     @FXML private TableView<EstacionSeguimiento>             tablaEstaciones;

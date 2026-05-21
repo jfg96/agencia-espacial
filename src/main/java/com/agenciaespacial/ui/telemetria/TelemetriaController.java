@@ -11,10 +11,19 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @author Antonio Manuel Rodriguez Palenzuela
- * Crear/buscar/actualizar/eliminar RegistroTelemetria.
- * RS-003: nivelBateria 0-100 (validado en TelemetriaService).
- * La tabla carga los registros del satélite seleccionado en el ComboBox de filtro.
+ * Controlador para gestión de registros de telemetría.
+ *
+ * Responsabilidades:
+ * - Mostrar registros por satélite seleccionado y permitir CRUD de {@code RegistroTelemetria}.
+ * - Parsear y validar fecha/hora con formato {@code yyyy-MM-dd HH:mm}.
+ * - Validar campos numéricos y delegar restricciones de negocio (p. ej. nivel de batería 0-100)
+ *   en {@link TelemetriaService}.
+ *
+ * Uso:
+ * - Seleccionar un satélite en {@code cmbFiltroSatelite} para cargar los registros.
+ * - Rellenar el formulario para crear/editar registros y pulsar Guardar.
+ *
+ * Autor: Antonio Manuel Rodriguez Palenzuela
  */
 public class TelemetriaController {
 

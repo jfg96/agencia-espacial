@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.agenciaespacial.ui.mision.MisionController">
+    <center>
+        <TableView fx:id="tablaMisiones" style="-fx-pref-width:600;">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colTipo" text="Tipo" prefWidth="90"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="180"/>
+                <TableColumn fx:id="colEstado" text="Estado" prefWidth="110"/>
+                <TableColumn fx:id="colFechaLanzamiento" text="Lanzamiento" prefWidth="110"/>
+                <TableColumn fx:id="colVehiculo" text="Vehiculo" prefWidth="140"/>
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox spacing="8" style="-fx-padding:14; -fx-pref-width:380;">
+            <Label text="Buscar por ID"/>
+            <HBox spacing="6">
+                <TextField fx:id="txtBuscarId" promptText="ID" HBox.hgrow="ALWAYS"/>
+                <Button text="Buscar" onAction="#onBuscarId"/>
+            </HBox>
+            <Separator/>
+            <Label text="Nombre *"/>
+            <TextField fx:id="txtNombre" promptText="Nombre de la mision"/>
+            <Label text="Objetivo *"/>
+            <TextField fx:id="txtObjetivo" promptText="Objetivo"/>
+            <Label text="Fecha lanzamiento *"/>
+            <DatePicker fx:id="dpFechaLanzamiento" maxWidth="Infinity"/>
+            <Label text="Fecha fin prevista"/>
+            <DatePicker fx:id="dpFechaFinPrevista" maxWidth="Infinity"/>
+            <Label text="Estado *"/>
+            <ChoiceBox fx:id="choEstado" maxWidth="Infinity"/>
+            <CheckBox fx:id="chkTripulada" text="Tripulada"/>
+            <Label text="Vehiculo *"/>
+            <ComboBox fx:id="cmbVehiculo" maxWidth="Infinity"/>
+            <Label fx:id="lblMensaje" style="-fx-text-fill:red;" wrapText="true"/>
+            <HBox spacing="6">
+                <Button text="Guardar" onAction="#onGuardar" style="-fx-background-color:#2e86c1;-fx-text-fill:white;"/>
+                <Button text="Eliminar" onAction="#onEliminar" style="-fx-background-color:#922b21;-fx-text-fill:white;"/>
+                <Button text="Nuevo" onAction="#onNuevo"/>
+                <Button text="Limpiar" onAction="#onLimpiar"/>
+            </HBox>
+            <Separator/>
+            <HBox spacing="6">
+                <Button text="Ver Satelites" onAction="#onVerSatelites"/>
+                <Button text="Ver Astronautas" onAction="#onVerAstronautas"/>
+                <Button text="Actualizar lista" onAction="#onActualizarLista"/>
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>

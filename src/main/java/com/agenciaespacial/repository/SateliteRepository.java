@@ -64,6 +64,15 @@ public class SateliteRepository {
         }
     }
 
+    public List<Satelite> listarTodos() {
+        EntityManager em = JPAUtil.getEntityManager();
+        try {
+            return em.createQuery("SELECT s FROM Satelite s", Satelite.class).getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
     /**
      * Recupera todos los satélites asociados a una misión concreta.
      *

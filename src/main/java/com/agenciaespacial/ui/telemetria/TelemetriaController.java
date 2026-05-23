@@ -1,5 +1,9 @@
 package com.agenciaespacial.ui.telemetria;
 
+import com.agenciaespacial.model.RegistroTelemetria;
+import com.agenciaespacial.model.Satelite;
+import com.agenciaespacial.service.SateliteService;
+import com.agenciaespacial.service.TelemetriaService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -81,7 +85,14 @@ public class TelemetriaController {
         cmbFiltroSatelite.setConverter(conv);
         cmbSatelite.setConverter(conv);
 
-
+        try {
+            var satelites = javafx.collections.FXCollections
+                    .observableArrayList(sateliteService.listarTodos());
+            cmbFiltroSatelite.setItems(satelites);
+            cmbSatelite.setItems(satelites);
+        } catch (Exception e) {
+            mostrarError("Error al cargar satélites: " + e.getMessage());
+        }
 
         // Cambiar satélite filtro → recargar tabla
         cmbFiltroSatelite.valueProperty().addListener((obs, ant, nuevo) -> cargarTabla());
@@ -103,6 +114,18 @@ public class TelemetriaController {
             tablaRegistros.getItems().setAll(lista);
             limpiarMsg();
         } catch (Exception e) { mostrarError("Error al cargar: " + e.getMessage()); }
+    }
+
+    @FXML private void onActualizar() {
+        try {
+            var satelites = javafx.collections.FXCollections
+                    .observableArrayList(sateliteService.listarTodos());
+            cmbFiltroSatelite.setItems(satelites);
+            cmbSatelite.setItems(satelites);
+        } catch (Exception e) {
+            mostrarError("Error al actualizar satélites: " + e.getMessage());
+        }
+        cargarTabla();
     }
 
     @FXML private void onBuscarId() {

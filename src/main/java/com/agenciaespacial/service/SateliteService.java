@@ -68,6 +68,10 @@ public class SateliteService {
         return sateliteRepository.buscarPorId(id);
     }
 
+    public List<Satelite> listarTodos() {
+        return sateliteRepository.listarTodos();
+    }
+
     /**
      * Recupera todos los satélites asociados a una misión concreta.
      *

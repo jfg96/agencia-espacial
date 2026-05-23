@@ -102,6 +102,14 @@ public class MisionService {
      */
     public Mision actualizar(Mision mision) {
         validarCamposObligatorios(mision);
+        misionRepository.buscarPorId(mision.getId()).ifPresent(existente -> {
+            if (!existente.getNombre().equals(mision.getNombre())
+                    && misionRepository.existeConNombre(mision.getNombre())) {
+                throw new IllegalArgumentException(
+                        "RS-005: Ya existe una misión con el nombre '"
+                        + mision.getNombre() + "'.");
+            }
+        });
         return misionRepository.actualizar(mision);
     }
 

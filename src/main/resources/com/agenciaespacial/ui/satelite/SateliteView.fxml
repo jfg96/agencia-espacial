@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.agenciaespacial.ui.satelite.SateliteController">
+    <center>
+        <TableView fx:id="tablaSatelites">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="160"/>
+                <TableColumn fx:id="colTipo" text="Tipo" prefWidth="100"/>
+                <TableColumn fx:id="colAltitud" text="Altitud" prefWidth="90"/>
+                <TableColumn fx:id="colFechaOrbita" text="Orbita" prefWidth="110"/>
+                <TableColumn fx:id="colMision" text="Mision" prefWidth="160"/>
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox spacing="8" style="-fx-padding:14; -fx-pref-width:340;">
+            <Label text="Buscar por ID"/>
+            <HBox spacing="6">
+                <TextField fx:id="txtBuscarId" promptText="ID" HBox.hgrow="ALWAYS"/>
+                <Button text="Buscar" onAction="#onBuscarId"/>
+            </HBox>
+            <Separator/>
+            <Label text="Nombre *"/>
+            <TextField fx:id="txtNombre" promptText="Nombre del satelite"/>
+            <Label text="Tipo *"/>
+            <TextField fx:id="txtTipo" promptText="Tipo"/>
+            <Label text="Altitud orbital (km) *"/>
+            <TextField fx:id="txtAltitudOrbital" promptText="km"/>
+            <Label text="Fecha de orbita *"/>
+            <DatePicker fx:id="dpFechaOrbita" maxWidth="Infinity"/>
+            <Label text="Mision *"/>
+            <ComboBox fx:id="cmbMision" maxWidth="Infinity"/>
+            <Label fx:id="lblMensaje" style="-fx-text-fill:red;" wrapText="true"/>
+            <HBox spacing="6">
+                <Button text="Guardar" onAction="#onGuardar" style="-fx-background-color:#2e86c1;-fx-text-fill:white;"/>
+                <Button text="Eliminar" onAction="#onEliminar" style="-fx-background-color:#922b21;-fx-text-fill:white;"/>
+                <Button text="Nuevo" onAction="#onNuevo"/>
+                <Button text="Limpiar" onAction="#onLimpiar"/>
+            </HBox>
+            <HBox spacing="6">
+                <Button text="Ver Telemetria" onAction="#onVerTelemetria"/>
+                <Button text="Actualizar lista" onAction="#onActualizarLista"/>
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>

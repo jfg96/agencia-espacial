@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.agenciaespacial.ui.vehiculo.VehiculoController">
+    <center>
+        <TableView fx:id="tablaVehiculos">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="180"/>
+                <TableColumn fx:id="colModelo" text="Modelo" prefWidth="140"/>
+                <TableColumn fx:id="colCapacidad" text="Cap. (kg)" prefWidth="100"/>
+                <TableColumn fx:id="colPais" text="Pais" prefWidth="130"/>
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox spacing="8" style="-fx-padding:14; -fx-pref-width:320;">
+            <Label text="Buscar por ID"/>
+            <HBox spacing="6">
+                <TextField fx:id="txtBuscarId" promptText="ID" HBox.hgrow="ALWAYS"/>
+                <Button text="Buscar" onAction="#onBuscarId"/>
+            </HBox>
+            <Separator/>
+            <Label text="Nombre *"/>
+            <TextField fx:id="txtNombre" promptText="Nombre del vehiculo"/>
+            <Label text="Modelo *"/>
+            <TextField fx:id="txtModelo" promptText="Modelo"/>
+            <Label text="Capacidad (kg) *"/>
+            <TextField fx:id="txtCapacidadKg" promptText="kg"/>
+            <Label text="Pais de fabricacion *"/>
+            <TextField fx:id="txtPaisFabricacion" promptText="Pais"/>
+            <Label fx:id="lblMensaje" style="-fx-text-fill:red;" wrapText="true"/>
+            <HBox spacing="6">
+                <Button text="Guardar" onAction="#onGuardar" style="-fx-background-color:#2e86c1;-fx-text-fill:white;"/>
+                <Button text="Eliminar" onAction="#onEliminar" style="-fx-background-color:#922b21;-fx-text-fill:white;"/>
+                <Button text="Nuevo" onAction="#onNuevo"/>
+                <Button text="Limpiar" onAction="#onLimpiar"/>
+            </HBox>
+            <Button text="Actualizar lista" onAction="#onActualizarLista" maxWidth="Infinity"/>
+        </VBox>
+    </right>
+</BorderPane>

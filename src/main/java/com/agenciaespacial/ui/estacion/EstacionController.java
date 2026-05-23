@@ -1,5 +1,9 @@
 package com.agenciaespacial.ui.estacion;
 
+import com.agenciaespacial.model.EstacionSeguimiento;
+import com.agenciaespacial.model.Mision;
+import com.agenciaespacial.model.Satelite;
+import com.agenciaespacial.service.EstacionService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

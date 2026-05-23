@@ -1,5 +1,7 @@
 package com.agenciaespacial.ui.astronauta;
 
+import com.agenciaespacial.model.Astronauta;
+import com.agenciaespacial.service.AstronautaService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

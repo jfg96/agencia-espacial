@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.agenciaespacial.ui.MainController"
+      spacing="12" alignment="CENTER" style="-fx-background-color: #1e2d3d;">
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+    <Label text="Agencia Espacial" style="-fx-font-size: 22; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    <Label text="Panel de Control" style="-fx-font-size: 13; -fx-text-fill: #aabbcc;"/>
+
+    <Separator style="-fx-background-color: #445566;"/>
+
+    <Button text="Misiones" onAction="#abrirMisiones" maxWidth="Infinity" style="-fx-font-size:13; -fx-background-color:#2e86c1; -fx-text-fill:white; -fx-background-radius:6; -fx-padding:10;"/>
+    <Button text="Astronautas" onAction="#abrirAstronautas" maxWidth="Infinity" style="-fx-font-size:13; -fx-background-color:#117a65; -fx-text-fill:white; -fx-background-radius:6; -fx-padding:10;"/>
+    <Button text="Satelites" onAction="#abrirSatelites" maxWidth="Infinity" style="-fx-font-size:13; -fx-background-color:#7d3c98; -fx-text-fill:white; -fx-background-radius:6; -fx-padding:10;"/>
+    <Button text="Telemetria" onAction="#abrirTelemetria" maxWidth="Infinity" style="-fx-font-size:13; -fx-background-color:#b7950b; -fx-text-fill:white; -fx-background-radius:6; -fx-padding:10;"/>
+    <Button text="Vehiculos de Lanzamiento" onAction="#abrirVehiculos" maxWidth="Infinity" style="-fx-font-size:13; -fx-background-color:#922b21; -fx-text-fill:white; -fx-background-radius:6; -fx-padding:10;"/>
+    <Button text="Estaciones de Seguimiento" onAction="#abrirEstaciones" maxWidth="Infinity" style="-fx-font-size:13; -fx-background-color:#1a5276; -fx-text-fill:white; -fx-background-radius:6; -fx-padding:10;"/>
+</VBox>

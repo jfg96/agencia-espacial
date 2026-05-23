@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.agenciaespacial.ui.astronauta.AstronautaController">
+    <center>
+        <TableView fx:id="tablaAstronautas">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="200"/>
+                <TableColumn fx:id="colNacionalidad" text="Nacionalidad" prefWidth="130"/>
+                <TableColumn fx:id="colFechaNacimiento" text="Nacimiento" prefWidth="110"/>
+                <TableColumn fx:id="colEspecialidad" text="Especialidad" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox spacing="8" style="-fx-padding:14; -fx-pref-width:340;">
+            <Label text="Buscar por ID"/>
+            <HBox spacing="6">
+                <TextField fx:id="txtBuscarId" promptText="ID" HBox.hgrow="ALWAYS"/>
+                <Button text="Buscar" onAction="#onBuscarId"/>
+            </HBox>
+            <Separator/>
+            <Label text="Nombre completo *"/>
+            <TextField fx:id="txtNombreCompleto" promptText="Nombre completo"/>
+            <Label text="Nacionalidad *"/>
+            <TextField fx:id="txtNacionalidad" promptText="Nacionalidad"/>
+            <Label text="Fecha de nacimiento *"/>
+            <DatePicker fx:id="dpFechaNacimiento" maxWidth="Infinity"/>
+            <Label text="Especialidad *"/>
+            <TextField fx:id="txtEspecialidad" promptText="Especialidad"/>
+            <Label fx:id="lblMensaje" style="-fx-text-fill:red;" wrapText="true"/>
+            <HBox spacing="6">
+                <Button text="Guardar" onAction="#onGuardar" style="-fx-background-color:#2e86c1;-fx-text-fill:white;"/>
+                <Button text="Eliminar" onAction="#onEliminar" style="-fx-background-color:#922b21;-fx-text-fill:white;"/>
+                <Button text="Nuevo" onAction="#onNuevo"/>
+                <Button text="Limpiar" onAction="#onLimpiar"/>
+            </HBox>
+            <Button text="Actualizar lista" onAction="#onActualizarLista" maxWidth="Infinity"/>
+        </VBox>
+    </right>
+</BorderPane>

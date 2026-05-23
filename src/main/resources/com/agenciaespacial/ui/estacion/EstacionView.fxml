@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.agenciaespacial.ui.estacion.EstacionController">
+    <center>
+        <TableView fx:id="tablaEstaciones">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="180"/>
+                <TableColumn fx:id="colPais" text="Pais" prefWidth="120"/>
+                <TableColumn fx:id="colCiudad" text="Ciudad" prefWidth="120"/>
+                <TableColumn fx:id="colLatitud" text="Latitud" prefWidth="90"/>
+                <TableColumn fx:id="colLongitud" text="Longitud" prefWidth="90"/>
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox spacing="8" style="-fx-padding:14; -fx-pref-width:320;">
+            <Label text="Buscar por ID"/>
+            <HBox spacing="6">
+                <TextField fx:id="txtBuscarId" promptText="ID" HBox.hgrow="ALWAYS"/>
+                <Button text="Buscar" onAction="#onBuscarId"/>
+            </HBox>
+            <Separator/>
+            <Label text="Nombre *"/>
+            <TextField fx:id="txtNombre" promptText="Nombre de la estacion"/>
+            <Label text="Pais *"/>
+            <TextField fx:id="txtPais" promptText="Pais"/>
+            <Label text="Ciudad *"/>
+            <TextField fx:id="txtCiudad" promptText="Ciudad"/>
+            <Label text="Latitud *"/>
+            <TextField fx:id="txtLatitud" promptText="Ej: 40.4168"/>
+            <Label text="Longitud *"/>
+            <TextField fx:id="txtLongitud" promptText="Ej: -3.7038"/>
+            <Label fx:id="lblMensaje" style="-fx-text-fill:red;" wrapText="true"/>
+            <HBox spacing="6">
+                <Button text="Guardar" onAction="#onGuardar" style="-fx-background-color:#2e86c1;-fx-text-fill:white;"/>
+                <Button text="Eliminar" onAction="#onEliminar" style="-fx-background-color:#922b21;-fx-text-fill:white;"/>
+                <Button text="Nuevo" onAction="#onNuevo"/>
+                <Button text="Limpiar" onAction="#onLimpiar"/>
+            </HBox>
+            <HBox spacing="6">
+                <Button text="Ver Misiones" onAction="#onVerMisiones"/>
+                <Button text="Actualizar lista" onAction="#onActualizarLista"/>
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>

@@ -27,7 +27,7 @@ public class VehiculoLanzamiento implements Serializable {
     private String paisFabricacion;
 
     // Lado inverso de la relación con Misión (1:N)
-    @OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vehiculo")
     private List<Mision> misiones = new ArrayList<>();
 
     // ── Constructores ──────────────────────────────────────────

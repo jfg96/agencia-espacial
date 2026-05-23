@@ -1,4 +1,10 @@
 package com.agenciaespacial.ui.satelite;
+
+import com.agenciaespacial.model.Mision;
+import com.agenciaespacial.model.RegistroTelemetria;
+import com.agenciaespacial.model.Satelite;
+import com.agenciaespacial.service.MisionService;
+import com.agenciaespacial.service.SateliteService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -79,7 +85,7 @@ public class SateliteController {
         String raw = txtBuscarId.getText().trim();
         if (raw.isEmpty()) { cargarTabla(); return; }
         try {
-            Satelite s = sateliteService.buscarPorId(Long.parseLong(raw));
+            Satelite s = sateliteService.buscarPorId(Long.parseLong(raw)).orElse(null);
             if (s == null) mostrarInfo("No existe satélite con ID " + raw);
             else { tablaSatelites.getItems().setAll(s); rellenarFormulario(s); }
         } catch (NumberFormatException e) { mostrarError("El ID debe ser un número entero."); }

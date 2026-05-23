@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.agenciaespacial.ui.telemetria.TelemetriaController">
+    <center>
+        <SplitPane dividerPositions="0.58">
+            <VBox spacing="5" style="-fx-padding:8;">
+                <HBox spacing="6" alignment="CENTER_LEFT">
+                    <Label text="Satelite:"/>
+                    <ComboBox fx:id="cmbFiltroSatelite" prefWidth="200"/>
+                    <TextField fx:id="txtBuscarId" promptText="ID" prefWidth="70"/>
+                    <Button text="Buscar por ID" onAction="#onBuscarId"/>
+                    <Button text="Actualizar"    onAction="#onActualizarLista"/>
+                </HBox>
+                <TableView fx:id="tablaRegistros" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId"          text="ID"            prefWidth="50"/>
+                        <TableColumn fx:id="colFechaHora"   text="Fecha y hora"  prefWidth="130"/>
+                        <TableColumn fx:id="colTemperatura" text="Temp (C)"      prefWidth="85"/>
+                        <TableColumn fx:id="colVelocidad"   text="Vel (km/s)"    prefWidth="90"/>
+                        <TableColumn fx:id="colBateria"     text="Bateria (%)"   prefWidth="90"/>
+                        <TableColumn fx:id="colSatelite"    text="Satelite"      prefWidth="130"/>
+                    </columns>
+                    <placeholder><Label text="Selecciona un satelite para ver su telemetria."/></placeholder>
+                </TableView>
+            </VBox>
+            <ScrollPane fitToWidth="true">
+                <VBox spacing="10" style="-fx-padding:15;">
+                    <GridPane hgap="10" vgap="8">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="160" halignment="RIGHT"/>
+                            <ColumnConstraints hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        <Label text="Fecha/hora (yyyy-MM-dd HH:mm):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtFechaHora"   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="Temperatura (C):"    GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtTemperatura" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Label text="Velocidad (km/s):"   GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtVelocidad"   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        <Label text="Nivel bateria (%):"  GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtNivelBateria" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        <Label text="Satelite:"           GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="cmbSatelite" maxWidth="Infinity" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    </GridPane>
+                    <HBox spacing="6">
+                        <Button text="Nuevo"    onAction="#onNuevo"/>
+                        <Button text="Guardar"  onAction="#onGuardar"  style="-fx-background-color:#1565c0; -fx-text-fill:white;"/>
+                        <Button text="Eliminar" onAction="#onEliminar" style="-fx-background-color:#b71c1c; -fx-text-fill:white;"/>
+                        <Button text="Limpiar"  onAction="#onLimpiar"/>
+                    </HBox>
+                    <Label fx:id="lblMensaje" text="" wrapText="true"/>
+                </VBox>
+            </ScrollPane>
+        </SplitPane>
+    </center>
+</BorderPane>

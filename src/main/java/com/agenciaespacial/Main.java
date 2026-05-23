@@ -1,15 +1,18 @@
 package com.agenciaespacial;
 
-import com.agenciaespacial.ui.Menu;
+import com.agenciaespacial.ui.App;
 
 /**
- * Punto de entrada de la aplicación.
- * Instancia el menú principal y arranca el bucle de interacción con el usuario.
+ * Entrada auxiliar para iniciar la aplicación JavaFX desde un entorno que
+ * espera una clase {@code Main} con método {@code public static void main}.
+ *
+ * Responsabilidad:
+ * - Delegar el arranque en {@link com.agenciaespacial.ui.App#main(String[])}.
+ *
+ * Autor: Antonio Manuel Rodriguez Palenzuela
  */
 public class Main {
-
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.iniciar();
+        App.main(args);
     }
 }

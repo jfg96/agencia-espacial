@@ -213,4 +213,8 @@ El proyecto sigue una **arquitectura en tres capas**:
 
 ---
 
+## 📹Enlace para ver video de prueba
+
+https://youtu.be/XNfmhqS5CjI
+
 *I.E.S. Delgado Hernández · Bollullos Par del Condado · DAM 2025–2026*
